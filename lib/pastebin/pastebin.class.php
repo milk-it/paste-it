@@ -272,13 +272,13 @@ class Pastebin
 			$seconds=$age;
 			
 			if ($days>1)
-				$age="$days days ago";
+				$age="$days dias atrás";
 			elseif ($hours>0)
-				$age="$hours hr".(($hours>1)?"s":"")." ago";
+				$age="$hours hr".(($hours>1)?"s":"")." atrás";
 			elseif ($minutes>0)
-				$age="$minutes min".(($minutes>1)?"s":"")." ago";
+				$age="$minutes min".(($minutes>1)?"s":"")." atrás";
 			else
-				$age="$seconds sec".(($seconds>1)?"s":"")." ago";
+				$age="$seconds seg".(($seconds>1)?"s":"")." atrás";
 			
 			$url=$this->getPostURL($post['pid']);
 			
@@ -300,7 +300,7 @@ class Pastebin
 		if ($post)
 		{
 			//show a quick reference url, poster and parents
-			$post['posttitle']="Posted by {$post['poster']} on {$post['postdate']}";
+			$post['posttitle']="Postado por {$post['poster']} em {$post['postdate']}";
 			
 			if ($post['parent_pid']>0)
 			{
