@@ -243,14 +243,14 @@ if (strlen($page['post']['posttitle']))
 		
 		if ($page['post']['parent_pid']>0)
 		{
-			echo "<a href=\"{$page['post']['parent_diffurl']}\" title=\"veja as diferenças\">diff</a> | ";
+			echo "<a href=\"{$page['post']['parent_diffurl']}\" title=\"veja as diferenças\">diferenças</a> | ";
 		} 
 		
 		echo "<a href=\"{$page['post']['downloadurl']}\" title=\"download do arquivo\">download</a> | ";
 		
 		echo "<span id=\"copytoclipboard\"></span>";
 		
-		echo "<a href=\"/\" title=\"make new post\">new post</a>";
+		echo "<a href=\"/\" title=\"fazer um novo post\">novo post</a>";
 		
 		echo "</h1>";
 }
