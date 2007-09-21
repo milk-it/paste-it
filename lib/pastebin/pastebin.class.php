@@ -190,7 +190,7 @@ class Pastebin
 	function getPostURL($id)
 	{
 		global $CONF;
-		return sprintf("http://{$_SERVER['HTTP_HOST']}".$this->conf['url_format'], $id);
+		return sprintf($this->conf['url_format'], $id);
 	}
 
 	function redirectToPost($id)

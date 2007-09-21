@@ -1,0 +1,5 @@
+DirectoryIndex pastebin.php
+
+RewriteEngine on
+RewriteBase /php/paste
+RewriteRule ([0-9]+) pastebin.php?show=$1

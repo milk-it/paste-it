@@ -33,7 +33,7 @@ pastebin.com Copyright 2006 Paul Dixon - email suggestions to lordelph at gmail.
 <head>
 <title><?php echo $page['title'] ?></title>
 <meta name="ROBOTS" content="NOARCHIVE"/>
-<link rel="stylesheet" type="text/css" media="screen" href="/pastebin.css?ver=4" />
+<link rel="stylesheet" type="text/css" media="screen" href="pastebin.css?ver=4" />
 
 <?php if (isset($page['post']['codecss']))
 {
@@ -42,9 +42,9 @@ pastebin.com Copyright 2006 Paul Dixon - email suggestions to lordelph at gmail.
 	echo '</style>';
 }
 ?>
-<script type="text/javascript" src="/pastebin.js?ver=3"></script>
-<script type="text/javascript" src="/prototype.js"></script>
-<script type="text/javascript" src="/milx/milx.js" /></script>
+<script type="text/javascript" src="pastebin.js?ver=3"></script>
+<script type="text/javascript" src="prototype.js"></script>
+<script type="text/javascript" src="milx/milx.js" /></script>
 <script type="text/javascript">
     Event.onLoad(function() { new Milx.FormHelper.AutoResizeTextarea("code", 40); });
 </script>
