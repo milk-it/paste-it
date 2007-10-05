@@ -197,7 +197,16 @@ class Pastebin
 	{
 		header("Location:".$this->getPostURL($id));	
 	}
-	
+
+        function doReportSpam($pid)
+        {
+            $post=$this->db->getPost($pid, $this->conf['subdomain']);
+            if ($post) 
+                return $this->db->setFlagSpam(array($pid));
+
+            return false;
+        }
+
 	function doDownload($pid)
 	{
 		$ok=false;
@@ -324,6 +333,8 @@ class Pastebin
 			{
 				$post['followups'][$idx]['followup_url']=$this->getPostUrl($followup['pid']);	
 			}
+                        // URL to report SPAM of post
+			$post['spamurl']=$this->conf['this_script']."?spam=$pid";
 			
 			$post['downloadurl']=$this->conf['this_script']."?dl=$pid";
 			

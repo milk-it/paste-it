@@ -74,7 +74,25 @@ $pastebin=new Pastebin($CONF);
 // clean up older posts 
 $pastebin->doGarbageCollection();
 
+///////////////////////////////////////////////////////////////////////////////
+// if we get this far, we're going to be displaying some HTML, so let's kick
+// off here...
+$page=array();
 
+//figure out some nice defaults
+$page['current_format']=$CONF['default_highlighter'];
+$page['expiry']=$CONF['default_expiry'];
+$page['remember']='';	
+$page['message']='';
+
+///////////////////////////////////////////////////////////////////////////////
+// process to block the ips banned
+//
+if ($pastebin->db->isIpBanned($_SERVER["REMOTE_ADDR"], $subdomain))
+{
+    header("HTTP/1.1 403 Forbidden");
+    exit;
+}
 ///////////////////////////////////////////////////////////////////////////////
 // process new posting
 //
@@ -107,17 +125,21 @@ if (isset($_GET['dl']))
 	exit;
 }
 
-	
-
 ///////////////////////////////////////////////////////////////////////////////
-// if we get this far, we're going to be displaying some HTML, so let's kick
-// off here...
-$page=array();
-
-//figure out some nice defaults
-$page['current_format']=$CONF['default_highlighter'];
-$page['expiry']=$CONF['default_expiry'];
-$page['remember']='';	
+// proccess report spam
+//
+if (isset($_GET['spam'])) 
+{
+    $pid=intval($_GET['spam']);
+    if (!$pastebin->doReportSpam($pid))
+    {
+        //not fount
+        echo "Pastebin entry $pid is not available";
+        exit;
+    } else {
+        $page["message"]="Obrigado por reportar um possível spam. A sua ajuda é muito importante para melhorar o nosso anti-spam.";
+    }
+}
 
 //see if we can come up with a better default using the subdomain
 if (strlen($CONF['subdomain']) && isset($CONF['all_syntax'][$CONF['subdomain']]))
@@ -209,10 +231,3 @@ elseif ($page['current_format']!='text')
 // HTML page output
 //
 include("layout.php");
-
-
-
-
-  
-
-

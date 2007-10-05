@@ -45,7 +45,7 @@ the same directory as pastebin.php, but it's better practice to prevent it
 being accessible via HTTP.
 
 Once you've got apache configured appropriately, and setup a new database
-with the following table
+with the following tables
 
 CREATE TABLE `pastebin` (
 	  `pid` int(11) NOT NULL auto_increment,
@@ -58,14 +58,23 @@ CREATE TABLE `pastebin` (
 	  `codecss` text,
 	  `domain` varchar(255) default '',
 	  `expires` DATETIME,
+	  `spam` int(1) default '0',
+          `ip` varchar(15) NOT NULL DEFAULT '0',
 	  `expiry_flag` ENUM('d','m', 'f') NOT NULL DEFAULT 'm',
 	  
 	  PRIMARY KEY  (`pid`),
 	  KEY `domain` (`domain`)
 	);
 
+CREATE TABLE banned (
+    `ip` varchar(15) NOT NULL,
+    `domain` varchar(255) default '',
 
+    PRIMARY KEY (`ip`)
+);
 
+Execute this command to your database accept utf8 charset! :D
+ALTER DATABASE NameOfYourDatabase CHARACTER SET utf8;
 
 Now you need to edit you base configuration file. Make a copy of 
 lib/config/default.conf.php	and call the file my.domain.conf.php

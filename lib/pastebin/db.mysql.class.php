@@ -84,6 +84,18 @@ class DB
 		//delete extra posts
 		$this->_query($sql);	
     }
+
+    /**
+     * Delete all posts informed in $pids
+     * access public
+     */
+    function deletePosts($pids)
+    {
+        if ((count($pids)>0) && $this->_query("delete from pastebin where pid in (".join(",", $pids).")")) 
+            return true;
+
+        return false;
+    }
     
     /**
     * Delete all expired posts
@@ -117,11 +129,59 @@ class DB
     	}
     	
     	
-    	$this->_query('insert into pastebin (poster, domain, posted, format, code, parent_pid, expires,expiry_flag) '.
-				"values (?, ?, now(), ?, ?, ?, $expires, ?)",
-				$poster,$subdomain,$format,$code,$parent_pid, $expiry_flag);	
+    	$this->_query('insert into pastebin (poster, domain, posted, format, code, parent_pid, expires, ip, expiry_flag) '.
+				"values (?, ?, now(), ?, ?, ?, $expires, ?, ?)",
+				$poster,$subdomain,$format,$code,$parent_pid, $_SERVER["REMOTE_ADDR"], $expiry_flag);	
 		$id=$this->_get_insert_id();	
 		return $id;
+    }
+
+    /**
+     * Set flag SPAM to PIDs
+     * Flags:
+     * 1 = Are spam
+     * 2 = Aren't spam
+     * access public
+     */
+    function setFlagSpam($pids, $flag=1)
+    {
+        return ($this->_query("update pastebin set spam = $flag where pid in (".join(",", $pids).")")) ? true : false;
+    }
+
+    /**
+     * Get all spammers and banned yours ips.
+     * access public
+     */
+    function bannedSpammerPosts($pids)
+    {
+        $this->_query("select distinct ip, domain from pastebin where pid in (".join(",", $pids).")");
+        $posts=array();
+    	while ($this->_next_record())
+            $posts[]=$this->row;
+
+        foreach ($posts as $post)
+            $this->_setIpBanned($post["ip"], $post["domain"]);
+    }
+
+    /**
+     * Set any IP as banned in paste. Cursed spammer bots!!!
+     * access private
+     */
+    function _setIpBanned($ip, $subdomain)
+    {
+        if (!$this->isIpBanned($ip, $subdomain))
+            $this->_query("insert into banned (ip, domain) values (?, ?)", $ip, $subdomain);
+    }
+
+    /**
+     * Verify if the ip informed is banned
+     * access public
+     */
+    function isIpBanned($ip, $subdomain)
+    {
+        $this->_query("select * from banned where ip=? and domain=?", $ip, $subdomain);
+
+        return ($this->_next_record()) ? true : false;
     }
     
      /**
@@ -180,6 +240,20 @@ class DB
 		
 		return $childposts;	
     	
+    }
+
+    /**
+     * Return all posts flaged as spam
+     * access public
+     */
+    function getSpamPosts($subdomain)
+    {
+        $posts=array();
+        $this->_query("select pid, poster, ip from pastebin where domain=? and spam=1", $subdomain);
+        while ($this->_next_record())
+            $posts[]=$this->row;
+
+        return $posts;
     }
     
    /**

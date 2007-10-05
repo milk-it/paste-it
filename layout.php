@@ -23,7 +23,7 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
  
-echo "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
+echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
 <!--
@@ -94,8 +94,8 @@ for a variety of options.</p>
 </ul>
 
 <h1>Sobre</h1>
-<p>Pastebin é uma ferramenta de debugging colaborativo, <a href="<?php echo $CONF['this_script'].'?help=1' ?>">veja o help</a>
-para maiores informações.</p>
+<p>Pastebin Ã© uma ferramenta de debugging colaborativo, <a href="<?php echo $CONF['this_script'].'?help=1' ?>">veja o help</a>
+para maiores informaÃ§Ãµes.</p>
 
 <script>
     function buildQuery()
@@ -109,7 +109,7 @@ para maiores informações.</p>
         return false;
     }
 </script>
-<h1>Documentações</h1>
+<h1>DocumentaÃ§Ãµes</h1>
 <form id="search_form" onsubmit="javascript:return buildQuery()">
     <select name="engine">
         <option value="http://www.mysql.com/search/?base=http://dev.mysql.com&lang=en&doc=1&m=o&q=">MySQL Manual</option>
@@ -120,7 +120,7 @@ para maiores informações.</p>
     <input type="submit" value="Go!" />
 </form>
 
-<h1>Créditos</h1>
+<h1>CrÃ©ditos</h1>
 <p>Desenvolvido por <a title="Blog, principalmente sobre desenvolvimento de software" href="http://blog.dixo.net">Paul Dixon</a></p>
 <p>Personalizado por <a title="Milk-it Brasil Software House" href="http://www.milk-it.net">Milk-it</a></p>
 
@@ -136,6 +136,8 @@ para maiores informações.</p>
 
 
 <div id="content">
+
+    <?php if (!empty($page["message"])) { ?><div id="message" style="color:#930504;font-weight:bold;margin-top:5px;margin-bottom:10px;"><?=$page["message"]?></div><?php } ?>
 	
 	<?php
 /*
@@ -181,13 +183,13 @@ if (isset($_REQUEST["diff"]))
 			$page['posttitle']='';
 	
 			//echo "<div style=\"text-align:center;border:1px red solid;padding:5px;margin-bottom:5px;\">Diff feature is in BETA! If you have feedback, send it to lordelph at gmail.com</div>";
-			echo "<h1>Diferença entre <br/>post modificado <a href=\"".$pastebin->getPostUrl($newpost['pid'])."\">{$newpost['pid']}</a> de {$newpost['poster']} em {$newpost['postdate']} e<br/>".
+			echo "<h1>DiferenÃ§a entre <br/>post modificado <a href=\"".$pastebin->getPostUrl($newpost['pid'])."\">{$newpost['pid']}</a> de {$newpost['poster']} em {$newpost['postdate']} e<br/>".
 				"post original <a href=\"".$pastebin->getPostUrl($oldpost['pid'])."\">{$oldpost['pid']}</a> de {$oldpost['poster']} em {$oldpost['postdate']}<br/>";
 			
 			echo "Exibir ";
-			echo "<a title=\"Nâo mostrar linhas modificadas ou inseridas\" style=\"padding:1px 4px 3px 4px;\" id=\"oldlink\" href=\"javascript:showold()\">antiga versão</a> | ";
-			echo "<a title=\"Não mostrar linhas removidas da versão antiga\" style=\"padding:1px 4px 3px 4px;\" id=\"newlink\" href=\"javascript:shownew()\">nova versão</a> | ";
-			echo "<a title=\"Mostrar ambas insersões e remoções\"  style=\"background:#880000;padding:1px 4px 3px 4px;\" id=\"bothlink\" href=\"javascript:showboth()\">ambas as versões</a> ";
+			echo "<a title=\"NÃ£o mostrar linhas modificadas ou inseridas\" style=\"padding:1px 4px 3px 4px;\" id=\"oldlink\" href=\"javascript:showold()\">antiga versÃ£o</a> | ";
+			echo "<a title=\"NÃ£o mostrar linhas removidas da vers?o antiga\" style=\"padding:1px 4px 3px 4px;\" id=\"newlink\" href=\"javascript:shownew()\">nova versÃ£o</a> | ";
+			echo "<a title=\"Mostrar ambas insersÃµes e remoÃ§Ãµes\"  style=\"background:#880000;padding:1px 4px 3px 4px;\" id=\"bothlink\" href=\"javascript:showboth()\">ambas as versÃµes</a> ";
 			echo "</h1>";
 			
 			$newpost['code']=preg_replace('/^'.$CONF['highlight_prefix'].'/m', '', $newpost['code']);
@@ -221,8 +223,8 @@ if (strlen($page['post']['posttitle']))
 		echo "<h1>{$page['post']['posttitle']}";
 		if ($page['post']['parent_pid']>0)
 		{
-			echo " (modificação ou post de <a href=\"{$page['post']['parent_url']}\" title=\"ver post original\">{$page['post']['parent_poster']}</a> ";
-			echo "<a href=\"{$page['post']['parent_diffurl']}\" title=\"veja as diferenças\">veja diferenças</a>)";
+			echo " (modificaÃ§Ã£o ou post de <a href=\"{$page['post']['parent_url']}\" title=\"ver post original\">{$page['post']['parent_poster']}</a> ";
+			echo "<a href=\"{$page['post']['parent_diffurl']}\" title=\"veja as diferenÃ§as\">veja diferenÃ§as</a>)";
 		}
 		
 		echo "<br/>";
@@ -243,22 +245,24 @@ if (strlen($page['post']['posttitle']))
 		
 		if ($page['post']['parent_pid']>0)
 		{
-			echo "<a href=\"{$page['post']['parent_diffurl']}\" title=\"veja as diferenças\">diferenças</a> | ";
+			echo "<a href=\"{$page['post']['parent_diffurl']}\" title=\"veja as diferenÃ§as\">diferenÃ§as</a> | ";
 		} 
-		
+
+		echo "<a href=\"{$page['post']['spamurl']}\" title=\"reportar esse post como spam\" style=\"color:#ff5555;\">reportar spam</a> | ";
+
 		echo "<a href=\"{$page['post']['downloadurl']}\" title=\"download do arquivo\">download</a> | ";
 		
 		echo "<span id=\"copytoclipboard\"></span>";
 		
-		echo "<a href=\"/\" title=\"fazer um novo post\">novo post</a>";
+		echo "<a href=\"".$CONF['this_script']."\" title=\"fazer um novo post\">novo post</a>";
 		
 		echo "</h1>";
 }
 if (isset($page['post']['pid']))
 {
 	echo "<div class=\"syntax\">".$page['post']['codefmt']."</div>";
-	echo "<br /><b>Enviar uma correção ou emenda abaixo. (<a href=\"{$CONF['this_script']}\">clique aqui para fazer um novo post</a>)</b><br/>";
-	echo "Após enviar uma emenda, você poderá ver as diferenças entre o novo e o antigo post facilmente.";
+	echo "<br /><b>Enviar uma correÃ§Ã£o ou emenda abaixo. (<a href=\"{$CONF['this_script']}\">clique aqui para fazer um novo post</a>)</b><br/>";
+	echo "ApÃ³s enviar uma emenda, vocÃª poderÃ¡ ver as diferenÃ§as entre o novo e o antigo post facilmente.";
 }	
 
 
@@ -266,21 +270,21 @@ if (isset($page['post']['pid']))
 if (isset($_GET['help']))
 {
 	?>
-	<h1>O que é o pastebin?</h1>
-	<p>pastebin está aqui para ajudar você colaborando com o debug do código. Se você não é familiarizado com a idéia, a
+	<h1>O que Ã© o pastebin?</h1>
+	<p>pastebin estÃ¡ aqui para ajudar vocÃª colaborando com o debug do cÃ³digo. Se vocÃª nÃ£o Ã© familiarizado com a idÃ©ia, a
         maioria das pessoas gostam de usar ele assim:</p>
 	<ul>
-	<li>submetem o fragmento do código para o pastebin, pegando a url</li>
+	<li>submetem o fragmento do cÃ³digo para o pastebin, pegando a url</li>
 	<li>colam a url em IRC ou conversas de IM</li>
-	<li>alguém responde por ler e talvez submete a modificação no seu código</li>
-	<li>você então ve a modifcação, talvez usando a ferramenta diff para localizar as alterações</li>
+	<li>alguÃ©m responde por ler e talvez submete a modificaÃ§Ã£o no seu cÃ³digo</li>
+	<li>vocÃª entÃ£o ve a modifcaÃ§Ã£o, talvez usando a ferramenta diff para localizar as alteraÃ§Ãµes</li>
 	</ul>
 	
-	<h1>Como eu posso ver a diferença entre dois posts?</h1>
-	<p>Quando você ve um post, você tem a oportunidade de editar o texto - 
-		<strong>isso criará um novo post</strong>, mas quando você visualizar você terá um link "diff" para 
-                comparar as mudanças entre a velha e a nova versão.</p>
-        <p>Isto é um poderoso recurso, ótimo para ver exatamente quais linhas alguém mudou.</p>	
+	<h1>Como eu posso ver a diferenÃ§a entre dois posts?</h1>
+	<p>Quando vocÃª ve um post, vocÃª tem a oportunidade de editar o texto - 
+		<strong>isso criarÃ¡ um novo post</strong>, mas quando vocÃª visualizar vocÃª terÃ¡ um link "diff" para 
+                comparar as mudanÃ§as entre a velha e a nova versÃ£o.</p>
+        <p>Isto Ã© um poderoso recurso, Ã³timo para ver exatamente quais linhas alguÃ©m mudou.</p>	
 
 	<?php
 }
@@ -291,7 +295,7 @@ else
 <input type="hidden" name="parent_pid" value="<?php echo $page['post']['pid'] ?>"/>
 
 <br/>Usar <select name="format">
-<option value="text">Não</option>
+<option value="text">NÃ£o</option>
 <optgroup label="Principais">
 <?php
 
@@ -323,7 +327,7 @@ foreach ($CONF['all_syntax'] as $code=>$name)
 <br/>
 
 Para destacar linhas particulares, prefixar cada linha com <?php echo $CONF['highlight_prefix'] ?><br/>
-Para dividir o paste em blocos, prefixar cada cabeçalho de bloco com ===Nome do Bloco<br/>
+Para dividir o paste em blocos, prefixar cada cabeÃ§alho de bloco com ===Nome do Bloco<br/>
 <textarea id="code" class="codeedit" name="code2" cols="80" rows="10" onkeydown="return catchTab(this,event)"><?php 
 echo htmlentities($page['post']['editcode']) ?></textarea>
 
@@ -333,7 +337,7 @@ echo htmlentities($page['post']['editcode']) ?></textarea>
 <input type="text" maxlength="24" size="24" id="poster" name="poster" value="<?php echo ($page['poster']) ? $page['poster'] : $_GET['poster'] ?>" />
 <input type="submit" name="paste" value="Enviar"/>
 <br />
-<input type="checkbox" name="remember" value="1" <?php echo $page['remember'] ?>/>Lembrar minhas configurações
+<input type="checkbox" name="remember" value="1" <?php echo $page['remember'] ?>/>Lembrar minhas configuraÃ§Ãµes
 
 </div>
 
@@ -348,7 +352,7 @@ echo htmlentities($page['post']['editcode']) ?></textarea>
 <label id="expiry_day_label" for="expiry_day">Dia</label>
 
 <input type="radio" id="expiry_month" name="expiry" value="m" <?php if ($page['expiry']=='m') echo 'checked="checked"'; ?> />
-<label id="expiry_month_label" for="expiry_month">Mês</label>
+<label id="expiry_month_label" for="expiry_month">MÃªs</label>
 
 <input type="radio" id="expiry_forever" name="expiry" value="f" <?php if ($page['expiry']=='f') echo 'checked="checked"'; ?> />
 <label id="expiry_forever_label" for="expiry_forever">Sempre</label>
