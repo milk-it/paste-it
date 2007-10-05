@@ -91,7 +91,7 @@ $CONF['spampass']='12345';
  * 3. if not using mod_rewrite, you'll need something more like this:
  *    $CONF['url_format']="/pastebin.php?show=%d";
  */
-$CONF['url_format']=dirname($_SERVER['PHP_SELF']).'/%d';
+$CONF['url_format']=preg_replace("/^\/$/", "", dirname($_SERVER['PHP_SELF'])).'/%d';
 
 /**
 * default expiry time d (day) m (month) or f (forever)
