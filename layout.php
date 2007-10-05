@@ -93,6 +93,12 @@ for a variety of options.</p>
 <li><a href="<?php echo $CONF['this_script'] ?>">Criar novo post</a></li>
 </ul>
 
+<h1>Notícias</h1>
+<p>Estamos sofrendo ataques de spammers constantemente, mas agora você pode me ajudar clicando no link "reportar spam" que aparece no topo 
+de cada post.</p>
+<br />
+<p>Para mais informações utilize o <a href="http://www.milk-it.net/contato">nosso contato</a>.</p>
+
 <h1>Sobre</h1>
 <p>Pastebin é uma ferramenta de debugging colaborativo, <a href="<?php echo $CONF['this_script'].'?help=1' ?>">veja o help</a>
 para maiores informações.</p>
