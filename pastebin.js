@@ -209,7 +209,7 @@ function clipboard()
 	copyToClipboard(post.innerText);
 	
 	var span=document.getElementById('copytoclipboard');
-	span.innerHTML='<a href="javascript:clipboard()" title="Copy to clipboard">text copied to clipboard</a> | ';
+	span.innerHTML='<a href="javascript:clipboard()" title="Copiar para clipboard">Copiar texto para o clipboard</a> | ';
 	
 }
 
@@ -221,7 +221,7 @@ function initPastebin()
 		var span=document.getElementById('copytoclipboard');
 		if (window.clipboardData && span)
 		{
-			span.innerHTML='<a href="javascript:clipboard()" title="Copy to clipboard">copy to clipboard</a> | ';
+			span.innerHTML='<a href="javascript:clipboard()" title="Copiar para clipboard">Copiar texto para o clipboard</a> | ';
 			
 		}
 		
@@ -244,7 +244,7 @@ function initPastebin()
 		radio.onclick=function ()
 		{
 			var expiryinfo=document.getElementById('expiryinfo');
-			expiryinfo.innerHTML="Bom para conversas no e-mail / dados temporários";
+			expiryinfo.innerHTML="Bom para conversas no e-mail / dados temporÃ¡rios";
 		
 			document.getElementById('expiry_day_label').className='';
 			document.getElementById('expiry_month_label').className='current';
@@ -256,7 +256,7 @@ function initPastebin()
 		radio.onclick=function ()
 		{
 			var expiryinfo=document.getElementById('expiryinfo');
-			expiryinfo.innerHTML="Bom para arquivamento de trechos úteis";
+			expiryinfo.innerHTML="Bom para arquivamento de trechos Ãºteis";
 		
 			document.getElementById('expiry_day_label').className='';
 			document.getElementById('expiry_month_label').className='';
