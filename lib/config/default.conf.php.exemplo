@@ -68,9 +68,14 @@ $CONF['dbsystem']='mysql';
 * db credentials
 */
 $CONF['dbhost']='localhost';
-$CONF['dbname']='';
-$CONF['dbuser']='';
+$CONF['dbname']='paste';
+$CONF['dbuser']='root';
 $CONF['dbpass']='';
+
+/**
+ * password to spam admin
+ */
+$CONF['spampass']='12345';
 
 /**
  * format of urls to pastebin entries - %d is the placeholder for
@@ -86,7 +91,7 @@ $CONF['dbpass']='';
  * 3. if not using mod_rewrite, you'll need something more like this:
  *    $CONF['url_format']="/pastebin.php?show=%d";
  */
-$CONF['url_format']='/%d';
+$CONF['url_format']=dirname($_SERVER['PHP_SELF']).'/%d';
 
 /**
 * default expiry time d (day) m (month) or f (forever)
@@ -98,7 +103,7 @@ $CONF['default_expiry']='m';
 * to use / for even shorter urls if the main script
 * is renamed to index.php
 */
-$CONF['this_script']='/pastebin.php';
+$CONF['this_script']='pastebin.php';
 
 /**
 * what's the maximum number of posts we want to keep?
