@@ -58,7 +58,7 @@
     <input type="submit" name="action" value="Remove" />
     <input type="submit" name="action" value="NoSpam" />
 </form>
-<a href="?logout=1">Logout</a>
+<a href="?logout=1">Logout</a> | <a href="<?=$_SERVER["PHP_SELF"]?>">Reload</a> | IPs Banned: <?=$pastebin->db->getNumIpBanneds($subdomain)?>
 <?php        
     } else {
         header("HTTP/1.0 404 Not Found");

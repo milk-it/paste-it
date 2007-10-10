@@ -183,6 +183,20 @@ class DB
 
         return ($this->_next_record()) ? true : false;
     }
+
+    /**
+     * Get the total of ips banned in of system
+     * access public
+     */
+    function getNumIpBanneds($subdomain)
+    {
+        $this->_query("select count(*) as total from banned where domain=?", $subdomain);
+        
+        if ($this->_next_record())
+            return $this->row["total"];
+        else
+            return 0;
+    }
     
      /**
     * Return entire pastebin row for given id/subdomdain
