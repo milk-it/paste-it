@@ -86,15 +86,12 @@ class DB
     }
 
     /**
-     * Delete all posts informed in $pids
-     * access public
+     * Delete post with IP equal $ip
+     * access private
      */
-    function deletePosts($pids)
+    function _deletePostWithIp($ip, $subdomain)
     {
-        if ((count($pids)>0) && $this->_query("delete from pastebin where pid in (".join(",", $pids).")")) 
-            return true;
-
-        return false;
+        return ($this->_query("delete from pastebin where ip=? and domain=?", $ip, $subdomain)) ? true : false;
     }
     
     /**
@@ -159,8 +156,10 @@ class DB
     	while ($this->_next_record())
             $posts[]=$this->row;
 
-        foreach ($posts as $post)
+        foreach ($posts as $post) {
             $this->_setIpBanned($post["ip"], $post["domain"]);
+            $this->_deletePostWithIp($post["ip"], $post["domain"]);
+        }
     }
 
     /**

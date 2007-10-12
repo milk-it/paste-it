@@ -22,7 +22,6 @@
                  */
                 case "Remove":
                     $pastebin->db->bannedSpammerPosts($_POST["pids"]);
-                    $pastebin->db->deletePosts($_POST["pids"]);
                     break;
                 /**
                  * Define the posts as not was spam
