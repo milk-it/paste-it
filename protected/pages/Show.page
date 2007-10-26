@@ -1,0 +1,43 @@
+<!---
+    Show page. Page to view a posted code and add changes.
+
+    Copyright (C) 2007  Carlos Henrique Júnior <carlos@milk-it.net>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+--->
+<com:TContent ID="content">
+    <h1 class="pagetitle">#<com:TLiteral ID="postId" /> <%[Posted by]%>: <com:TLiteral ID="posterName" /></h1>
+    <h2 class="pagetitle"><%[at]%> <com:TLiteral ID="postDate" /></h2>
+    <com:TPlaceHolder ID="parentPost">
+        <h3 class="pagetitle"><%[In reply to a]%> <a href="<com:TLiteral ID="parentId" />"><%[parent post]%></a>
+        (<com:THyperLink ID="diffLink" Text=<%[view diff]%> />)</h3>
+    </com:TPlaceHolder>
+    
+    <div id="codes">
+        <com:TPlaceHolder ID="codes" />
+    </div>
+    <div id="relateds" style="float:right">
+        <com:TRepeater ID="descendents">
+            <prop:HeaderTemplate>
+                <%[Changes:]%>
+            </prop:HeaderTemplate>
+            <prop:ItemTemplate>
+                [<a href="<%= $this->Data->id %>">#<%= $this->Data->id %> <%= $this->Data->name %></a>]
+            </prop:ItemTemplate>
+        </com:TRepeater>
+    </div>
+    <br />
+    <h1><%[reply <span>this</span> post]%></h1>
+    <com:PostForm ID="postForm" />
+</com:TContent>

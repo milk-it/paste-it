@@ -1,0 +1,272 @@
+<?xml version="1.0"?>
+<xliff version="1.0">
+ <file source-language="EN" target-language="en_US" datatype="plaintext" original="messages" date="2007-10-25T12:14:21Z" product-name="messages">
+  <body>
+  
+<trans-unit id="1">
+<source>Code Highlight:</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="2">
+<source>None</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="3">
+<source>How should we store your post?</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="4">
+<source>Day</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="5">
+<source>Month</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="6">
+<source>Forever</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="7">
+<source>Name:</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="8">
+<source>Don't you have a name?</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="9">
+<source>Post!</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="10">
+<source>Remember me</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="11">
+<source>Please, type the right string of the image</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="12">
+<source>colaborative debugging tool</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="13">
+<source>Idiom:</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="14">
+<source>new &lt;span&gt;post&lt;/span&gt;</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="15">
+<source>last &lt;span&gt;posts&lt;/span&gt;</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="16">
+<source>old</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="17">
+<source>docs</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="18">
+<source>help &lt;span&gt;center&lt;/span&gt;</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="19">
+<source>Make a new post</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="20">
+<source>More help</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="21">
+<source>to highlight a line prefix it with @@</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="22">
+<source>to create blocks prefix the header (the title) with ===</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="23">
+<source>Paste-it Help Center</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="24">
+<source>Paste-it is a debugging colaborative tool, which helps you to debug the application with the help of other people.</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="25">
+<source>Colaboretive what? How does it works?</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="26">
+<source>You post your wrong code and send it to somebody on IRC, IM, e-mail, or anything. The person changes your code and send you back the new URL. Now your have the corrected (or suggested) code and a diff page (that uses the same syntax of a diff file).</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="27">
+<source>What can Paste-it do to me?</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="28">
+<source>Paste-it currently has:</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="29">
+<source>support for &lt;b&gt;16 languages code highlight&lt;/b&gt; (and couting..!)</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="30">
+<source>you can add &lt;b&gt;named blocks of codes&lt;/b&gt; just by add a line that begins with "===Block Name". It's cool and simple!</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="31">
+<source>&lt;b&gt;diff page&lt;/b&gt; to you understand what have changed in your code or text file</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="32">
+<source>paste-it &lt;b&gt;remembers you&lt;/b&gt;! Paste-it beleaves that you are human (not a spammer bot) after the last time you have been here...</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="33">
+<source>What is coming soon?</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="34">
+<source>file upload</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="35">
+<source>private post</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="36">
+<source>more languages support</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="37">
+<source>a command line tool (such as &lt;a href="http://n01se.net/agriffis/nopaste/"&gt;nopaste&lt;/a&gt;)</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="38">
+<source>need more? &lt;a href="http://www.milk-it.net/contato"&gt;contact us!&lt;/a&gt;</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="39">
+<source>view diff</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="40">
+<source>Posted by</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="41">
+<source>at</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="42">
+<source>In reply to a</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="43">
+<source>parent post</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="44">
+<source>reply &lt;span&gt;this&lt;/span&gt; post</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="45">
+<source>view diff</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="46">
+<source>Posted by</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="47">
+<source>at</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="48">
+<source>In reply to a</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="49">
+<source>parent post</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="50">
+<source>reply &lt;span&gt;this&lt;/span&gt; post</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="51">
+<source>Changes:</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="52">
+<source>Language:</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="53">
+<source>Colaborative what? How does it works?</source>
+<target></target>
+</trans-unit>
+</body>
+ </file>
+</xliff>

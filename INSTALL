@@ -1,89 +1,50 @@
-Requirements:
-=============
-- PHP 4.1 or higher (works with register-globals off)
-- MySQL database server
+=== Installing Development Version
 
-- For short url generation, Apache with mod_rewrite available. Something
-  like the following configuration options should be used
+Set the protected/runtime and assets directories as writable by the
+web server (apache?).
 
-    RewriteEngine on
-    RewriteRule /([0-9]+) /pastebin.php?show=$1
+If you downloaded the SVN development version, you will have to
+download the PRADO Framework:
 
-  If mod_rewrite is not available, modify the shorturl() function to 
-  generate 'normal' urls.
+www.pradosoft.com.
 
-- For instant "private" pastebins on subdomains, you'll need a wildcard
-  DNS entry pointing at your server and ensure that pastebin virtual host
-  is the first virtual host on your server. There may be other ways to 
-  accomplish this, this was just the easiest for me.
-  
-  
-Installation
-============
+* Using PRADO Framework in Shared mode
 
-The tarball contains two main directories. You'll need a virtual host
-set up something like this
+To use PRADO Framework in shared mode (one prado for many apps) you
+just have to set the pradoLocation variable on the config.ini.
 
-<VirtualHost *>
-    DocumentRoot /path/to/pastebin/public_html
-    ServerName your.domain.name.com
+* Using PRADO Framework in static mode
 
-    php_value include_path .:/path/to/pastebin/lib
-    php_value register_globals off
-    DirectoryIndex pastebin.php
-    RewriteEngine on
-    RewriteRule /([0-9]+) /pastebin.php?show=$1
+To use PRADO Framework in static mode (one prado instance for paste
+only) you just have to copy the "framework" dir to the paste-it folder
+and comment the pradoLocation variable. This will make paste-it look
+for the framework in $PASTE_DIR/framework.
 
-</VirtualHost>  
+Read: setting up the .htaccess file
 
-The main element here is to ensure that the lib directory is on the search
-path. You could alternatively place your settings in an .htaccess file if 
-you wish
+=== Installing Static Package Version
 
-You can, if you wish, simply copy the contents of the lib directory into
-the same directory as pastebin.php, but it's better practice to prevent it
-being accessible via HTTP.
+Just extract the paste-it.XXX.tar.gz to a web accessible folder and set
+the protected/runtime and assets directories as writable by the
+web server (apache?).
 
-Once you've got apache configured appropriately, and setup a new database
-with the following tables
+=== Setting up the .htaccess file
 
-CREATE TABLE `pastebin` (
-	  `pid` int(11) NOT NULL auto_increment,
-	  `poster` varchar(16) default NULL,
-	  `posted` datetime default NULL,
-	  `code` text,
-	  `parent_pid` int(11) default '0',
-	  `format` varchar(16) default NULL,
-	  `codefmt` mediumtext,
-	  `codecss` text,
-	  `domain` varchar(255) default '',
-	  `expires` DATETIME,
-	  `spam` int(1) default '0',
-          `ip` varchar(15) NOT NULL DEFAULT '0',
-	  `expiry_flag` ENUM('d','m', 'f') NOT NULL DEFAULT 'm',
-	  
-	  PRIMARY KEY  (`pid`),
-	  KEY `domain` (`domain`)
-	);
+Set the RewriteBase variable in the .htaccess file as exemplified below:
 
-CREATE TABLE banned (
-    `ip` varchar(15) NOT NULL,
-    `domain` varchar(255) default '',
+e.g.: hosting paste-it on www.example.com/paste
+RewriteBase /paste
 
-    PRIMARY KEY (`ip`)
-);
+eg.: hosting paste-it on www.example.com/path/to/paste
+RewriteBase /path/to/paste
 
-Execute this command to your database accept utf8 charset! :D
-ALTER DATABASE NameOfYourDatabase CHARACTER SET utf8;
+eg.: hosting paste-it on paste.example.com
+RewriteBase /
 
-Now you need to edit you base configuration file. Make a copy of 
-lib/config/default.conf.php	and call the file my.domain.conf.php
+=== Configuring database
 
-For example, if your domain is superpaste.com, you'd call the file
-superpaste.com.conf.php
+ * Create a new database (maybe pasteit, or paste, or anything you wants...).
+ * Run the database.sql against the new database.
+ * Configure the database in the config.ini file.
 
-Edit the file to configure the software to your requirements. You
-can create alternative configurations for other host names simply
-by creating a new configuration file.
-
-That's it, you're good to go. Good luck!
+You're now ready to go!

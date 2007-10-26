@@ -1,0 +1,217 @@
+
+/*
+---- Atenção ----
+reset.css é parte integrante da YUI Library, distribuída pelo Yahoo sob licença BSD. Em caso de dúvidas, acesse: http://developer.yahoo.com/yui/reset/
+----
+por Lucas da Costa Petes <lucas@milk-it.net>
+*/
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0;padding:0;}
+table {border-collapse:collapse;border-spacing:0;}
+fieldset,img {border:0;}
+address,caption,cite,code,dfn,em,strong,th,var {font-style:normal;font-weight:normal;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;	font-weight:normal;}
+q:before,q:after {content:'';}
+abbr,acronym {border:0;}
+
+/* reset end */
+
+
+body {
+	color:#000;
+	margin:0px;
+	padding:0px;
+	font:12px arial, verdana, helvetica, sans-serif !important;
+}
+
+h2, h1 {
+font-size:19px !important;
+margin-bottom:20px !important;
+}
+
+h2 span, h1 span {
+color:#777;
+}
+
+p, ul, ol {margin-bottom:15px !important; }
+
+ol li {margin-left:20px;}
+
+div#top {
+padding:10px 20px;
+background:#222;
+}
+
+div#top h1 {
+	font-size: 21px !important;
+	color:white;
+	margin:0 !important;
+}
+
+div#top h1 a {color:white;}
+
+div#lang {float:right;margin-top:-22px;color:white; background:#444; padding:3px 6px;}
+div#lang a {color:#ccc; border-bottom:1px solid #777;}
+
+div#top h2 {
+font-size:15px !important;
+color:#ddd; margin:0 !important;
+}
+
+h1.pagetitle,
+h2.pagetitle {
+margin-bottom:0px !important;
+}
+
+h2.pagetitle {
+font-size:15px !important;
+color:#666;
+}
+
+h3.pagetitle {
+border:1px solid #ddd;
+border-width:1px 0 1px 0;
+padding:2px 0;
+font-size:14px;
+color:#999;
+}
+
+h4 {
+color:#333;
+font-size:14px !important;
+margin-bottom:10px !important;
+border-bottom:1px solid #eee;
+}
+
+input {margin:0 2px !important;}
+
+div#highlight p {color:#999; font-weight:bold; margin:10px 0; border-top:1px solid #ccc;}
+
+div.syntax a
+{
+	font-family: 'Courier New', Courier, monospace; 
+	font-weight: normal;
+	color:black;
+	text-decoration:underline;
+}
+
+a {
+	color:#09c;
+	text-decoration:none;
+}
+
+a:visited {color:#07a;}
+a:hover {border-bottom:1px solid #444;}
+
+a.code {
+	text-decoration:underline; 
+	font-family:courier, fixed;
+	font-weight:normal;}
+a.code:link {color:#09c;}
+a.code:visited {color:#900;}
+a.code:hover {text-decoration:underline;}
+
+code { font-size:12px;width:98%;}
+
+.codeedit {	font-size:12px;width:98%;}
+
+#content {
+	margin: 0px 20px 0 190px;
+	padding: 20px;
+	background-color: white;
+}
+
+#menu {
+	float:left;
+	width:160px;
+	padding-left:20px;
+	padding-top:20px;
+	margin-bottom:0 !important;
+}
+
+#menu h2 {margin-bottom:10px !important;}
+#menu h2 a {color:black;}
+#menu h2  a { display:block; border-bottom:1px solid #ddd; }
+
+li.highlight{ background-color: #ccccff; }
+
+#menu ul, div#content ul {
+	margin-left:15px;
+}
+
+div#content ul {
+list-style-type:circle;
+}
+
+#menu li {
+	list-style-type: circle;
+	line-height: 11px;
+	padding-bottom: 5px;
+	padding-bottom: 5px;
+}
+
+#menu .milk-it {
+display:block;
+text-align:center;
+border:0;
+margin-top:40px !important;
+}
+
+.menu_item {border-top:1px solid #ddd; padding-top:10px;}
+
+div#codes {
+font-size:11px !important;
+margin-top:20px;
+}
+/* configuration */
+div#highlight {float:left;display:inline}
+
+div#validity table {margin-top:6px;}
+div#validity label {padding-right:4px;}
+
+.postContent {width:100%; _width:99%; margin-bottom:15px; border:1px solid #c5c5c5;}
+
+div#captchaBox {float:left;display:inline;width:33%}
+div#name_validity {float:right;min-width:50%;}
+div#validity {float:left;margin-right:40px}
+
+div#name span input {background:#222; color:white; border:black; padding:0 20px 1px 20px; font-weight:bold;}
+
+table.diff td
+{
+	text-align:right;
+	padding-left:3px;
+	padding-right:3px;
+	font-size:8pt;
+}
+
+table.diff td.code
+{
+	text-align:left;
+	font-family: 'Courier New', Courier, monospace; 
+	font-weight: normal;
+}
+
+table.diff td.code pre
+{
+	margin:0;
+	padding:0;
+}
+
+table.diff tr.new
+{
+	background:#ddddff;
+}
+table.diff tr.old
+{
+	background:#ffdddd;
+}
+table.diff tr.hidenew
+{
+	display:none;
+}
+table.diff tr.hideold
+{
+	display:none;
+}

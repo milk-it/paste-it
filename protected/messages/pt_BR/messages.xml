@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<xliff version="1.0">
+ <file source-language="EN" target-language="pt_BR" datatype="plaintext" original="messages" date="2007-10-25T12:14:13Z" product-name="messages">
+  <body>
+  
+<trans-unit id="1">
+<source>Code Highlight:</source>
+<target>Sintaxe destacada:</target>
+</trans-unit>
+
+<trans-unit id="2">
+<source>None</source>
+<target>Nenhum</target>
+</trans-unit>
+
+<trans-unit id="3">
+<source>How should we store your post?</source>
+<target>Como devemos guardar seu post?</target>
+</trans-unit>
+
+<trans-unit id="4">
+<source>Day</source>
+<target>Dia</target>
+</trans-unit>
+
+<trans-unit id="5">
+<source>Month</source>
+<target>M&#xEA;s</target>
+</trans-unit>
+
+<trans-unit id="6">
+<source>Forever</source>
+<target>Para sempre</target>
+</trans-unit>
+
+<trans-unit id="7">
+<source>Name:</source>
+<target>Nome:</target>
+</trans-unit>
+
+<trans-unit id="8">
+<source>Don't you have a name?</source>
+<target>Voc&#xEA; n&#xE3;o tem um nome?</target>
+</trans-unit>
+
+<trans-unit id="9">
+<source>Post!</source>
+<target>Postar!</target>
+</trans-unit>
+
+<trans-unit id="10">
+<source>Remember me</source>
+<target>Lembre de mim</target>
+</trans-unit>
+
+<trans-unit id="11">
+<source>Please, type the right string of the image</source>
+<target>Por favor, digite corretamente o texto da imagem</target>
+</trans-unit>
+
+<trans-unit id="12">
+<source>colaborative debugging tool</source>
+<target>ferramenta de debug colaborativo</target>
+</trans-unit>
+
+<trans-unit id="13">
+<source>Idiom:</source>
+<target>Idioma:</target>
+</trans-unit>
+
+<trans-unit id="14">
+<source>new &lt;span&gt;post&lt;/span&gt;</source>
+<target>novo &lt;span&gt;post&lt;/span&gt;</target>
+</trans-unit>
+
+<trans-unit id="15">
+<source>last &lt;span&gt;posts&lt;/span&gt;</source>
+<target>&#xFA;ltimos &lt;span&gt;posts&lt;/span&gt;</target>
+</trans-unit>
+
+<trans-unit id="16">
+<source>old</source>
+<target>atr&#xE1;s</target>
+</trans-unit>
+
+<trans-unit id="17">
+<source>help &lt;span&gt;center&lt;/span&gt;</source>
+<target>central &lt;span&gt;de&lt;/span&gt; ajuda</target>
+</trans-unit>
+
+<trans-unit id="18">
+<source>Make a new post</source>
+<target>Criar um novo post</target>
+</trans-unit>
+
+<trans-unit id="19">
+<source>More help</source>
+<target>Mais ajuda</target>
+</trans-unit>
+
+<trans-unit id="20">
+<source>to highlight a line prefix it with @@</source>
+<target>para destacar uma linha prefixe-a com @@</target>
+</trans-unit>
+
+<trans-unit id="21">
+<source>to create blocks prefix the header (the title) with ===</source>
+<target>para criar blocos prefixe o t&#xED;tulo com ===</target>
+</trans-unit>
+
+<trans-unit id="22">
+<source>Paste-it Help Center</source>
+<target>Central de ajuda do Paste-it</target>
+</trans-unit>
+
+<trans-unit id="23">
+<source>Paste-it is a debugging colaborative tool, which helps you to debug the application with the help of other people.</source>
+<target>Paste-it &#xE9; uma ferramenta de debug colaborativo, que ajuda voc&#xEA; a depurar um aplicativo com a ajuda de outras pessoas.</target>
+</trans-unit>
+
+<trans-unit id="24">
+<source>Colaboretive what? How does it works?</source>
+<target>Colaborativo o que? Como isto funciona?</target>
+</trans-unit>
+
+<trans-unit id="25">
+<source>You post your wrong code and send it to somebody on IRC, IM, e-mail, or anything. The person changes your code and send you back the new URL. Now your have the corrected (or suggested) code and a diff page (that uses the same syntax of a diff file).</source>
+<target>Voc&#xEA; posta seu c&#xF3;digo com erros e o envia para algu&#xE9;m no IRC, IM, e-mail, ou qualquer coisa. A pessoa modifica seu c&#xF3;digo e envia de volta para voc&#xEA; a nova URL. Agora voc&#xEA; tem o c&#xF3;digo corrigido (ou sugerido) e uma p&#xE1;gina de diferen&#xE7;as (que usa a mesma sintaxe de um arquivo diff).</target>
+</trans-unit>
+
+<trans-unit id="26">
+<source>What can Paste-it do to me?</source>
+<target>O que o Paste-it pode fazer para mim?</target>
+</trans-unit>
+
+<trans-unit id="27">
+<source>Paste-it currently has:</source>
+<target>O Paste-it atualmente possui:</target>
+</trans-unit>
+
+<trans-unit id="28">
+<source>support for &lt;b&gt;16 languages code highlight&lt;/b&gt; (and couting..!)</source>
+<target>suporte a &lt;b&gt;sintaxe destacada de 16 linguagens&lt;/b&gt; (e contando..!)</target>
+</trans-unit>
+
+<trans-unit id="29">
+<source>you can add &lt;b&gt;named blocks of codes&lt;/b&gt; just by add a line that begins with "===Block Name". It's cool and simple!</source>
+<target>voc&#xEA; pode adicionar &lt;b&gt;blocos de c&#xF3;digo com nome&lt;/b&gt; apenas adicionando uma linha que comece com "===Nome do Bloco". Isto &#xE9; legal e simples!</target>
+</trans-unit>
+
+<trans-unit id="30">
+<source>&lt;b&gt;diff page&lt;/b&gt; to you understand what have changed in your code or text file</source>
+<target>&lt;b&gt;p&#xE1;gina de diferen&#xE7;as&lt;/b&gt; para voc&#xEA; entender o que foi modificado no seu c&#xF3;digo ou arquivo de texto</target>
+</trans-unit>
+
+<trans-unit id="31">
+<source>paste-it &lt;b&gt;remembers you&lt;/b&gt;! Paste-it beleaves that you are human (not a spammer bot) after the last time you have been here...</source>
+<target>o paste-it &lt;b&gt;lembra de voc&#xEA;&lt;/b&gt;! O Paste-it acredita que voc&#xEA; &#xE9; humano (e n&#xE3;o um bot spammer) ap&#xF3;s a &#xFA;ltima vez que voc&#xEA; esteve aqui...</target>
+</trans-unit>
+
+<trans-unit id="32">
+<source>What is coming soon?</source>
+<target>O que est&#xE1; por vir?</target>
+</trans-unit>
+
+<trans-unit id="33">
+<source>file upload</source>
+<target>envio de arquivo</target>
+</trans-unit>
+
+<trans-unit id="34">
+<source>private post</source>
+<target>post privado</target>
+</trans-unit>
+
+<trans-unit id="35">
+<source>more languages support</source>
+<target>suporte a mais linguagens</target>
+</trans-unit>
+
+<trans-unit id="36">
+<source>a command line tool (such as &lt;a href="http://n01se.net/agriffis/nopaste/"&gt;nopaste&lt;/a&gt;)</source>
+<target>uma ferramenta de linha de comando (assim como &lt;a href="http://n01se.net/agriffis/nopaste/"&gt;nopaste&lt;/a&gt;)</target>
+</trans-unit>
+
+<trans-unit id="37">
+<source>need more? &lt;a href="http://www.milk-it.net/contato"&gt;contact us!&lt;/a&gt;</source>
+<target>precisa de mais? &lt;a href="http://www.milk-it.net/contato"&gt;fale conosco!&lt;/a&gt;</target>
+</trans-unit>
+
+<trans-unit id="38">
+<source>docs</source>
+<target>documenta&#xE7;&#xF5;es</target>
+</trans-unit>
+
+<trans-unit id="39">
+<source>view diff</source>
+<target>ver diferen&#xE7;as</target>
+</trans-unit>
+
+<trans-unit id="40">
+<source>Posted by</source>
+<target>Postado por</target>
+</trans-unit>
+
+<trans-unit id="41">
+<source>at</source>
+<target>&#xE0;s</target>
+</trans-unit>
+
+<trans-unit id="42">
+<source>Changes:</source>
+<target>Altera&#xE7;&#xF5;es:</target>
+</trans-unit>
+
+<trans-unit id="43">
+<source>reply &lt;span&gt;this&lt;/span&gt; post</source>
+<target>responder &lt;span&gt;este&lt;/span&gt; post</target>
+</trans-unit>
+
+<trans-unit id="44">
+<source>In reply to a</source>
+<target>Em resposta a um</target>
+</trans-unit>
+
+<trans-unit id="45">
+<source>parent post</source>
+<target>outro post</target>
+</trans-unit>
+
+<trans-unit id="46">
+<source>Language:</source>
+<target>Idioma:</target>
+</trans-unit>
+
+<trans-unit id="47">
+<source>Colaborative what? How does it works?</source>
+<target>Colaborativo o que? Como isto funciona?</target>
+</trans-unit>
+</body>
+ </file>
+</xliff>

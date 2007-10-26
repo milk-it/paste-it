@@ -1,0 +1,18 @@
+[general]
+captcha=true
+blocks=true
+line_highlight=true
+recents=10
+theme="Default"
+; Uncomment this line to change the default prado path ($APP/framework)
+;pradoLocation="/home/chjunior/libs/php/prado/framework/"
+
+[admin]
+email="carlos@milk-it.net"
+name="Carlos Júnior"
+url="http://www.milk-it.net"
+
+[database]
+conn="mysql:host=localhost;dbname=paste2"
+user=root
+pass=123

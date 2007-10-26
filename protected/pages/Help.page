@@ -1,0 +1,42 @@
+<!---
+    Help page (aka Paste-it Help Center).
+
+    Copyright (C) 2007  Carlos Henrique Júnior <carlos@milk-it.net>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+--->
+<com:TContent ID="content">
+    <h1><%[Paste-it Help Center]%></h1>
+    <p><%[Paste-it is a debugging colaborative tool, which helps you to debug the application with the help of other people.]%></p>
+    <h2><%[Colaborative what? How does it works?]%></h2>
+    <p><%[You post your wrong code and send it to somebody on IRC, IM, e-mail, or anything. The person changes your code and send you back the new URL. Now your have the corrected (or suggested) code and a diff page (that uses the same syntax of a diff file).]%></p>
+    <h2><%[What can Paste-it do to me?]%></h2>
+    <p>
+        <%[Paste-it currently has:]%>
+        <ul>
+            <li><%[support for <b>16 languages code highlight</b> (and couting..!)]%></li>
+            <li><%[you can add <b>named blocks of codes</b> just by add a line that begins with "===Block Name". It's cool and simple!]%></li>
+            <li><%[<b>diff page</b> to you understand what have changed in your code or text file]%></li>
+            <li><%[paste-it <b>remembers you</b>! Paste-it beleaves that you are human (not a spammer bot) after the last time you have been here...]%></li>
+        </ul>
+    </p>
+    <h2><%[What is coming soon?]%></h2>
+    <ul>
+        <li><%[file upload]%></li>
+        <li><%[private post]%></li>
+        <li><%[more languages support]%></li>
+        <li><%[a command line tool (such as <a href="http://n01se.net/agriffis/nopaste/">nopaste</a>)]%></li>
+    </ul>
+    <p><%[need more? <a href="http://www.milk-it.net/contato">contact us!</a>]%></p>
+</com:TContent>
