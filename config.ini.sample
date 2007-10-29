@@ -3,7 +3,8 @@ captcha=true
 blocks=true
 line_highlight=true
 recents=10
-theme="Default"
+; This line was comment to the css work in all environment
+;theme="Default"
 ; Uncomment this line to change the default prado path ($APP/framework)
 ;pradoLocation="/home/chjunior/libs/php/prado/framework/"
 
