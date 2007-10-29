@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <xliff version="1.0">
- <file source-language="EN" target-language="pt_BR" datatype="plaintext" original="messages" date="2007-10-25T12:14:13Z" product-name="messages">
+ <file source-language="EN" target-language="pt_BR" datatype="plaintext" original="messages" date="2007-10-29T15:58:06Z" product-name="messages">
   <body>
   
 <trans-unit id="1">
@@ -236,6 +236,16 @@
 <trans-unit id="47">
 <source>Colaborative what? How does it works?</source>
 <target>Colaborativo o que? Como isto funciona?</target>
+</trans-unit>
+
+<trans-unit id="48">
+<source>Differences between the post</source>
+<target>Diferenças entre os posts</target>
+</trans-unit>
+
+<trans-unit id="49">
+<source>and</source>
+<target>e</target>
 </trans-unit>
 </body>
  </file>
