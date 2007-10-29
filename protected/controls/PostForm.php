@@ -118,6 +118,11 @@ class PostForm extends TTemplateControl
     private function loadConfigurations()
     {
         global $config;
+
+        // If the poster is passed in URL, set the posterName as poster of URL
+        if (isset($this->Page->Request["poster"]))
+            $this->posterName->Text = $this->Page->Request["poster"];
+
         if ($name = $this->Page->Request->Cookies["__name"])
         {
             // disabling captcha
