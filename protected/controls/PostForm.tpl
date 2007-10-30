@@ -71,7 +71,7 @@
             Display="None" />
         <span><com:TButton ID="saveButton" Text="<%[Post!]%>" /></span><br />
         <com:TCheckBox ID="rememberMe" />
-        <com:TLabel ForControl="rememberMe" Text="<%[Remember me]%>" />
+        <com:TLabel ForControl="rememberMe" Text="<%[Remember me (and eliminate the captcha)]%>" />
     </div>
 </div>
 <div id="captchaBox">

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <xliff version="1.0">
- <file source-language="EN" target-language="pt_BR" datatype="plaintext" original="messages" date="2007-10-29T15:58:06Z" product-name="messages">
+ <file source-language="EN" target-language="pt_BR" datatype="plaintext" original="messages" date="2007-10-30T04:43:45Z" product-name="messages">
   <body>
   
 <trans-unit id="1">
@@ -240,12 +240,17 @@
 
 <trans-unit id="48">
 <source>Differences between the post</source>
-<target>Diferenças entre os posts</target>
+<target>Diferen&#xE7;as entre os posts</target>
 </trans-unit>
 
 <trans-unit id="49">
 <source>and</source>
 <target>e</target>
+</trans-unit>
+
+<trans-unit id="50">
+<source>Remember me (and eliminate the captcha)</source>
+<target>Lembre de mim (e elimine o captcha)</target>
 </trans-unit>
 </body>
  </file>
