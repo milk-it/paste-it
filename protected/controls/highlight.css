@@ -1,0 +1,34 @@
+.python-hl-quotes {color:#999;}
+.python-hl-reserved {color:#072; font-weight:bold;}
+.python-hl-code {color:#999;}
+.python-hl-identifier {color:#089;}
+.python-hl-brackets {color:red; font-weight:bold;}
+.python-hl-string {color:orange;}
+.python-hl-comment {color:#666;}
+
+.perl-hl-quotes {color:#999;}
+.perl-hl-reserved {color:#072; font-weight:bold;}
+.perl-hl-code {color:#555;}
+.perl-hl-identifier {color:#089;}
+.perl-hl-brackets {color:red;}
+.perl-hl-string {color:teal;}
+.perl-hl-comment {color:#666;}
+.perl-hl-var {color:purple;}
+.perl-hl-number {color:pink;}
+
+.java-hl-reserved {color:#072; font-weight:bold;}
+.java-hl-code {color:#999;}
+.java-hl-identifier {color:#089;}
+.java-hl-brackets {color:red;}
+.java-hl-inlinedoc {color:orange;}
+.java-hl-comment {color:#666;}
+
+.ruby-hl-quotes {color:#999;}
+.ruby-hl-reserved {color:#072; font-weight:bold;}
+.ruby-hl-code {color:#999;}
+.ruby-hl-identifier {color:#089;}
+.ruby-hl-brackets {color:red; font-weight:bold;}
+.ruby-hl-string {color:orange;}
+.ruby-hl-comment {color:#666;}
+.ruby-hl-var {color:purple;}
+

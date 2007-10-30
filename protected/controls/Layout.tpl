@@ -24,6 +24,7 @@
 <com:THead>
     <prop:Title>Paste-it - Colaborative Debugging Tool</prop:Title>
     <meta name="ROBOTS" content="NOARCHIVE"/>
+	<link href="<%~ highlight.css %>" type="text/css" rel="stylesheet" />
 </com:THead>
 <body>
     <div id="top">
