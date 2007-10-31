@@ -25,22 +25,31 @@
     <com:TLabel ForControl="languageHighlight" Text="<%[Code Highlight:]%>" />
     <com:TDropDownList ID="languageHighlight">
         <com:TListItem Text="<%[None]%>" value="none" />
-        <com:TListItem Text="abap" Value="abap" />
-        <com:TListItem Text="c++" Value="cpp" />
-        <com:TListItem Text="css" Value="css" />
-        <com:TListItem Text="diff" Value="diff" />
-        <com:TListItem Text="html" Value="html" />
-        <com:TListItem Text="javascript" Value="javascript" />
-        <com:TListItem Text="java" Value="java" />
-        <com:TListItem Text="mysql" Value="mysql" />
-        <com:TListItem Text="package" Value="package" />
-        <com:TListItem Text="perl" Value="perl" />
-        <com:TListItem Text="php" Value="php" />
-        <com:TListItem Text="prado" Value="prado" />
-        <com:TListItem Text="python" Value="python" />
-        <com:TListItem Text="ruby" Value="ruby" />
-        <com:TListItem Text="sql" Value="sql" />
-        <com:TListItem Text="xml" Value="xml" />
+        <com:TListItem Text="Abap" Value="abap" />
+        <com:TListItem Text="ActionScript" Value="actionscript" />
+        <com:TListItem Text="ASP" Value="asp" />
+        <com:TListItem Text="Bash" Value="bash" />
+        <com:TListItem Text="C" Value="c" />
+        <com:TListItem Text="C++" Value="cpp" />
+        <com:TListItem Text="C#" Value="csharp" />
+        <com:TListItem Text="ColdFusion" Value="cfm" />
+        <com:TListItem Text="CSS" Value="css" />
+        <com:TListItem Text="Diff" Value="diff" />
+        <com:TListItem Text="HTML" Value="html" />
+        <com:TListItem Text="Ini File" Value="ini" />
+        <com:TListItem Text="JavaScript" Value="javascript" />
+        <com:TListItem Text="Java" Value="java" />
+        <com:TListItem Text="Lisp" Value="lisp" />
+        <com:TListItem Text="Mysql" Value="mysql" />
+        <com:TListItem Text="Pascal" Value="pascal" />
+        <com:TListItem Text="Perl" Value="perl" />
+        <com:TListItem Text="Php" Value="php" />
+        <com:TListItem Text="Prado" Value="prado" />
+        <com:TListItem Text="Python" Value="python" />
+        <com:TListItem Text="Ruby" Value="ruby" />
+        <com:TListItem Text="SQL" Value="sql" />
+        <com:TListItem Text="TCL" Value="sql" />
+        <com:TListItem Text="XML" Value="xml" />
     </com:TDropDownList><br />
     <p>
         <com:TTranslate ID="lineHighlightHelp" Text="to highlight a line prefix it with @@" /><br />
