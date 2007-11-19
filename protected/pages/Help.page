@@ -29,12 +29,12 @@
             <li><%[you can add <b>named blocks of codes</b> just by add a line that begins with "===Block Name". It's cool and simple!]%></li>
             <li><%[<b>diff page</b> to you understand what have changed in your code or text file]%></li>
             <li><%[paste-it <b>remembers you</b>! Paste-it beleaves that you are human (not a spammer bot) after the last time you have been here...]%></li>
+            <li><%[private post]%></li>
         </ul>
     </p>
     <h2><%[What is coming soon?]%></h2>
     <ul>
         <li><%[file upload]%></li>
-        <li><%[private post]%></li>
         <li><%[more languages support]%></li>
         <li><%[a command line tool (such as <a href="http://n01se.net/agriffis/nopaste/">nopaste</a>)]%></li>
     </ul>
