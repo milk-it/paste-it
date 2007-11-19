@@ -32,6 +32,7 @@ class Post extends TActiveRecord
     private $_created_on;
     public $code;
     public $highlight;
+    public $private_key;
 
     public function getCreated_On()
     {
@@ -56,8 +57,13 @@ class Post extends TActiveRecord
         $c = new TActiveRecordCriteria;
         $c->OrdersBy["id"] = "DESC";
         $c->Limit = $max;
-        $c->Condition = "created_on > DATE_SUB(current_timestamp, INTERVAL $max DAY)";
+        $c->Condition = "created_on > DATE_SUB(current_timestamp, INTERVAL $max DAY) AND private_key IS NULL";
         return self::finder()->findAll($c);
+    }
+
+    public static function findPrivate($key)
+    {
+        return self::finder()->find("private_key = '$key'");
     }
 
     public function human_age()

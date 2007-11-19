@@ -44,6 +44,11 @@ class PostForm extends TTemplateControl
         $this->languageHighlight->SelectedValue = $post->highlight;
         $this->postContent->Text = $post->code;
         $this->parentId->Value = $post->id;
+        if (strlen($post->private_key) > 0)
+        {
+            $this->private->Checked = true;
+            $this->private->Enabled = false;
+        }
     }
 
     public function onSave($param)
@@ -55,6 +60,7 @@ class PostForm extends TTemplateControl
             $post->code = $this->getCode();
             $post->highlight = $this->getHighlight();
             $post->expire = $this->getValidity();
+            $post->private_key = $this->isPrivatePost() ? uniqid() : null;
             $post->name = $this->getName();
 
             $post->save();
@@ -78,7 +84,7 @@ class PostForm extends TTemplateControl
                 $this->disableCaptcha();
             }
 
-            $this->Response->redirect($post->id);
+            $this->Response->redirect("?page=Show&private=$post->private_key");
         }
         $this->raiseEvent("OnSave", $this, $param);
     }
@@ -106,6 +112,11 @@ class PostForm extends TTemplateControl
     public function getParentId()
     {
         return $this->parentId->getValue();
+    }
+
+    public function isPrivatePost()
+    {
+        return $this->private->Checked;
     }
 
     private function disableCaptcha()

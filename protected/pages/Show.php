@@ -27,7 +27,11 @@ class Show extends TPage
     public function onPreRender($param)
     {
         parent::onPreRender($param);
-        $post = Post::finder()->findByPk($_GET["id"]);
+        if (isset($_GET["private"]))
+            $post = Post::finder()->findPrivate($_GET["private"]);
+        else
+            $post = Post::finder()->findByPk($_GET["id"]);
+
         $this->processText($post);
 
         $this->postForm->setParentPost($post);

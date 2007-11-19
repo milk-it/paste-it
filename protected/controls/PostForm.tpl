@@ -57,6 +57,13 @@
         <com:THyperLink NavigateUrl=<%=$this->Page->Request->constructUrl('page', 'Help')%>>(<%[More help]%>)</com:THyperLink>
     </p>
 </div>
+<div style="text-align:right">
+    <com:TCheckBox ID="private" />
+    <com:TLabel ForControl="private">
+        <com:TImage ImageUrl="<%~ images/lock.gif %>" />
+        <%[private post]%>
+    </com:TLabel>
+</div>
 <com:TTextBox ID="postContent" TextMode="MultiLine" Columns="80" Rows="10" CssClass="postContent" />
 <script type="text/javascript" src="<%~ js/milx/milx.js %>"></script>
 <script type="text/javascript">
