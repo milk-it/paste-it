@@ -28,7 +28,7 @@
 </com:THead>
 <body>
     <div id="top">
-        <h1><a href="index.php">Paste-it</a></h1>
+        <h1><a href="<%= $this->Request->constructUrl("page", "Home") %>">Paste-it</a></h1>
         <h2><%[colaborative debugging tool]%></h2>
         <div id="lang">
             <%[Language:]%>

@@ -66,6 +66,11 @@ class Post extends TActiveRecord
         return self::finder()->find("private_key = '$key'");
     }
 
+    public static function findPublic($id)
+    {
+        return self::finder()->find("id = $id AND private_key IS NULL");
+    }
+
     public function human_age()
     {
         $d = date_parse($this->created_on);

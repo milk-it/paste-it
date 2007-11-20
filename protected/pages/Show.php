@@ -31,26 +31,31 @@ class Show extends TPage
         if (isset($_GET["private"]))
             $post = Post::finder()->findPrivate($_GET["private"]);
         else
-            $post = Post::finder()->findByPk($_GET["id"]);
+            $post = Post::finder()->findPublic($_GET["id"]);
 
-        $this->processText($post);
-
-        $this->postForm->setParentPost($post);
-
-        if ($post->parent_id != 0)
-        {
-            $this->parentId->Text = $post->parent_id;
-            $this->diffLink->NavigateUrl = $this->Request->constructUrl("page", "ShowDiff", array("id" => $post->id));
-        }
+        if (!$post)
+            $this->Response->redirect($this->Request->constructUrl("page", "Home"));
         else
-            $this->parentPost->Visible = false;
+        {
+            $this->processText($post);
+    
+            $this->postForm->setParentPost($post);
 
-        $this->descendents->DataSource = $post->descendents();
-        $this->descendents->dataBind();
+            if ($post->parent_id != 0)
+            {
+                $this->parentId->Text = $post->parent_id;
+                $this->diffLink->NavigateUrl = $this->Request->constructUrl("page", "ShowDiff", array("id" => $post->id));
+            }
+            else
+                $this->parentPost->Visible = false;
+    
+            $this->descendents->DataSource = $post->descendents();
+            $this->descendents->dataBind();
 
-		$this->postId->Text = $post->id;
-        $this->posterName->Text = $post->name;
-        $this->postDate->Text = $post->created_on;
+            $this->postId->Text = $post->id;
+            $this->posterName->Text = $post->name;
+            $this->postDate->Text = $post->created_on;
+        }
     }
 
     private function processText($post)
