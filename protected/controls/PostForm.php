@@ -44,6 +44,7 @@ class PostForm extends TTemplateControl
         $this->languageHighlight->SelectedValue = $post->highlight;
         $this->postContent->Text = $post->code;
         $this->parentId->Value = $post->id;
+
         if (strlen($post->private_key) > 0)
         {
             $this->private->Checked = true;
@@ -84,7 +85,10 @@ class PostForm extends TTemplateControl
                 $this->disableCaptcha();
             }
 
-            $this->Response->redirect("?page=Show&private=$post->private_key");
+            if ($this->isPrivatePost())
+                $this->Response->redirect($this->Request->constructUrl("page", "Show", array("private" => $post->private_key)));
+            else
+                $this->Response->redirect($post->id);
         }
         $this->raiseEvent("OnSave", $this, $param);
     }
