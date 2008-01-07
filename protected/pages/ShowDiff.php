@@ -42,9 +42,9 @@ class ShowDiff extends TPage
 		    $diff->output . "</table>";
         $this->diff->addParsedObject($diff);
 
-        $this->originalLink->NavigateUrl = $this->Request->constructUrl("page", "Show", array("id" => $post2->id));
+        $this->originalLink->NavigateUrl = UrlGen::postPath($post2);
         $this->originalLink->Text = "#{$post2->id}";
-        $this->modifiedLink->NavigateUrl = $this->Request->constructUrl("page", "Show", array("id" => $post1->id));
+        $this->modifiedLink->NavigateUrl = UrlGen::postPath($post1);
         $this->modifiedLink->Text = "#{$post1->id}";
     }
 }
