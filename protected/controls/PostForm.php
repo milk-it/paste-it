@@ -86,7 +86,7 @@ class PostForm extends TTemplateControl
             }
 
             if ($this->isPrivatePost())
-                $this->Response->redirect($this->Request->constructUrl("page", "Show", array("private" => $post->private_key)));
+                $this->Response->redirect(str_replace("index.php", "private/{$post->private_key}", $this->Request->getApplicationUrl()));
             else
                 $this->Response->redirect($post->id);
         }

@@ -37,7 +37,7 @@
         </div>
     </div>
     <div id="menu">
-	<h2><a href="index.php"><%[new <span>post</span>]%></a></h2>
+	<h2><a href="<%= $this->Request->constructUrl("page", "Home") %>"><%[new <span>post</span>]%></a></h2>
         <h2><%[last <span>posts</span>]%></h2>
         <com:TRepeater ID="beforePosts">
             <prop:HeaderTemplate><ul></prop:HeaderTemplate>

@@ -97,7 +97,7 @@ class Post extends TActiveRecord
     {
         $c = new TActiveRecordCriteria;
         $c->OrdersBy["id"] = "ASC";
-        $c->Condition = "parent_id = ?";
+        $c->Condition = "parent_id = ? AND private_key IS NULL";
 
         return self::finder()->findAll("parent_id = ?", $this->id);
     }
