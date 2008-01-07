@@ -1,5 +1,4 @@
 RewriteEngine on
-RewriteBase /paste
 RewriteRule ^([0-9]+)/?$ ?page=Show&id=$1 [L]
 RewriteRule ^([0-9]+)/diff/?$ ?page=ShowDiff&id=$1 [L]
 RewriteRule ^private/([a-z0-9]{13})/?$ ?page=Show&private=$1 [L]
