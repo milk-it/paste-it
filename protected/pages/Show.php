@@ -44,7 +44,7 @@ class Show extends TPage
             if ($post->parent_id != 0)
             {
                 $this->parentPostLink->NavigateUrl = UrlGen::postPath($post->getParent());
-                $this->diffLink->NavigateUrl = $this->Request->constructUrl("page", "ShowDiff", array("id" => $post->id));
+                $this->diffLink->NavigateUrl = UrlGen::postDiffPath($post);
             }
             else
                 $this->parentPost->Visible = false;

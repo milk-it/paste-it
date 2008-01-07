@@ -29,8 +29,12 @@ class ShowDiff extends TPage
     {
         parent::onLoad($param);
 
-        $post1 = Post::finder()->findByPk($_GET["id"]);
-        $post2 = Post::finder()->findByPk($post1->parent_id);
+        if (isset($_GET["private"]))
+            $post1 = Post::findPrivate($_GET["private"]);
+        else
+            $post1 = Post::findPublic($_GET["id"]);
+
+        $post2 = $post1->getParent();
 
         $diff = new Diff(explode("\n", $post2->code), explode("\n", $post1->code));
         $diff = "<table cellpadding=\"0\" cellspacing=\"0\" class=\"diff\">" .

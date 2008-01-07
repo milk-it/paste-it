@@ -37,6 +37,11 @@ class UrlGen
         else
             return self::$BASE . $post->id;
     }
+
+    public static function postDiffPath($post)
+    {
+        return self::postPath($post) . "/diff";
+    }
 }
 
 ?>
