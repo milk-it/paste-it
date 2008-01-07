@@ -71,6 +71,12 @@ class Post extends TActiveRecord
         return self::finder()->find("id = $id AND private_key IS NULL");
     }
 
+    public function getParent()
+    {
+        if ($this->parent_id)
+            return self::finder()->find("id = $this->parent_id");
+    }
+
     public function human_age()
     {
         $d = date_parse($this->created_on);

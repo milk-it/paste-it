@@ -15,6 +15,7 @@ $app = new TApplication;
 // configuring database
 Prado::using("System.Data.TDbConnection");
 Prado::using("System.Data.ActiveRecord.TActiveRecordManager");
+Prado::using("Application.models.UrlGen");
 
 if (!isset($config["database"]["conn"]))
     throw new Exception("Please set the database/con variable on the config.ini file.");
@@ -24,7 +25,8 @@ $conn->ConnectionString = $config["database"]["conn"];
 $conn->Username = $config["database"]["user"];
 $conn->Password = $config["database"]["pass"];
 TActiveRecordManager::getInstance()->setDbConnection($conn);
-
+UrlGen::setBase(str_replace("index.php", "", $_SERVER["PHP_SELF"]));
 // starting "the magic place where magic things happens"
 $app->run();
+//phpinfo();
 ?>

@@ -16,6 +16,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 Prado::using("Application.models.Post");
+Prado::using("Application.models.UrlGen");
 /**
  * Show page backend. Brings the post from the database and builds the
  * Highlight controls.
@@ -29,21 +30,20 @@ class Show extends TPage
         parent::onPreRender($param);
 
         if (isset($_GET["private"]))
-            $post = Post::finder()->findPrivate($_GET["private"]);
+            $post = Post::findPrivate($_GET["private"]);
         else
-            $post = Post::finder()->findPublic($_GET["id"]);
+            $post = Post::findPublic($_GET["id"]);
 
         if (!$post)
             $this->Response->redirect($this->Request->constructUrl("page", "Home"));
         else
         {
             $this->processText($post);
-    
             $this->postForm->setParentPost($post);
 
             if ($post->parent_id != 0)
             {
-                $this->parentId->Text = $post->parent_id;
+                $this->parentPostLink->NavigateUrl = UrlGen::postPath($post->getParent());
                 $this->diffLink->NavigateUrl = $this->Request->constructUrl("page", "ShowDiff", array("id" => $post->id));
             }
             else
@@ -55,6 +55,16 @@ class Show extends TPage
             $this->postId->Text = $post->id;
             $this->posterName->Text = $post->name;
             $this->postDate->Text = $post->created_on;
+        }
+    }
+
+    public function createDescendent($sender, $param)
+    {
+        $item=$param->Item;
+        if ($item->ItemType != "Header")
+        {
+            $item->DescLink->NavigateUrl = UrlGen::postPath($param->item->Data);
+            $item->DescLink->Text = "#{$param->item->Data->id} {$param->item->Data->name}";
         }
     }
 

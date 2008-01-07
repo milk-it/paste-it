@@ -20,7 +20,7 @@
     <h1 class="pagetitle">#<com:TLiteral ID="postId" /> <%[Posted by]%>: <com:TLiteral ID="posterName" /></h1>
     <h2 class="pagetitle"><%[at]%> <com:TLiteral ID="postDate" /></h2>
     <com:TPlaceHolder ID="parentPost">
-        <h3 class="pagetitle"><%[In reply to a]%> <a href="<com:TLiteral ID="parentId" />"><%[parent post]%></a>
+        <h3 class="pagetitle"><%[In reply to a]%> <com:THyperLink ID="parentPostLink"><%[parent post]%></com:THyperLink>
         (<com:THyperLink ID="diffLink" Text=<%[view diff]%> />)</h3>
     </com:TPlaceHolder>
     
@@ -28,12 +28,12 @@
         <com:TPlaceHolder ID="codes" />
     </div>
     <div id="relateds" style="float:right">
-        <com:TRepeater ID="descendents">
+        <com:TRepeater ID="descendents" OnItemCreated="createDescendent">
             <prop:HeaderTemplate>
                 <%[Changes:]%>
             </prop:HeaderTemplate>
             <prop:ItemTemplate>
-                [<a href="<%= $this->Data->id %>">#<%= $this->Data->id %> <%= $this->Data->name %></a>]
+                [<com:THyperLink ID="DescLink" />]
             </prop:ItemTemplate>
         </com:TRepeater>
     </div>

@@ -41,12 +41,12 @@
         <h2><%[last <span>posts</span>]%></h2>
         <com:TRepeater ID="beforePosts">
             <prop:HeaderTemplate><ul></prop:HeaderTemplate>
-            <prop:FooterTemplate></ul></prop:FooterTemplate>
             <prop:ItemTemplate>
-                <li><a href="<%= $this->Data->id %>"><%= $this->Data->name %></a><br />
+                <li><a href="<%= UrlGen::postPath($this->Data) %>"><%= $this->Data->name %></a><br />
                     <%= $this->Data->human_age() %> <%[old]%>
                 </li>
             </prop:ItemTemplate>
+            <prop:FooterTemplate></ul></prop:FooterTemplate>
         </com:TRepeater>
         
         <script>
