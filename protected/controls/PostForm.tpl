@@ -40,7 +40,6 @@
         <com:TListItem Text="JavaScript" Value="javascript" />
         <com:TListItem Text="Java" Value="java" />
         <com:TListItem Text="Lisp" Value="lisp" />
-        <com:TListItem Text="Mysql" Value="mysql" />
         <com:TListItem Text="Pascal" Value="pascal" />
         <com:TListItem Text="Perl" Value="perl" />
         <com:TListItem Text="Php" Value="php" />
@@ -48,7 +47,7 @@
         <com:TListItem Text="Python" Value="python" />
         <com:TListItem Text="Ruby" Value="ruby" />
         <com:TListItem Text="SQL" Value="sql" />
-        <com:TListItem Text="TCL" Value="sql" />
+        <com:TListItem Text="TCL" Value="tcl" />
         <com:TListItem Text="XML" Value="xml" />
     </com:TDropDownList><br />
     <p>
