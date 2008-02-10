@@ -25,7 +25,7 @@ class Post extends TActiveRecord
 {
     const TABLE = "posts";
 
-    const EXPIRE_CONDITION = "(current_timestamp <= DATE_ADD(created_on, INTERVAL expire DAY))";
+    const EXPIRE_CONDITION = "(expire = 0 OR current_timestamp <= DATE_ADD(created_on, INTERVAL expire DAY))";
 
     public $id;
     public $parent_id;
