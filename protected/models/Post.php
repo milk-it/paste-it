@@ -25,6 +25,8 @@ class Post extends TActiveRecord
 {
     const TABLE = "posts";
 
+    const EXPIRE_CONDITION = "(current_timestamp <= DATE_ADD(created_on, INTERVAL expire DAY))";
+
     public $id;
     public $parent_id;
     public $name;
@@ -57,18 +59,18 @@ class Post extends TActiveRecord
         $c = new TActiveRecordCriteria;
         $c->OrdersBy["id"] = "DESC";
         $c->Limit = $max;
-        $c->Condition = "created_on > DATE_SUB(current_timestamp, INTERVAL $max DAY) AND private_key IS NULL";
+        $c->Condition = self::EXPIRE_CONDITION . " AND private_key IS NULL";
         return self::finder()->findAll($c);
     }
 
     public static function findPrivate($key)
     {
-        return self::finder()->find("private_key = '$key'");
+        return self::finder()->find("private_key = '$key' AND " . self::EXPIRE_CONDITION);
     }
 
     public static function findPublic($id)
     {
-        return self::finder()->find("id = $id AND private_key IS NULL");
+        return self::finder()->find("id = $id AND private_key IS NULL AND " . self::EXPIRE_CONDITION);
     }
 
     public function getParent()
