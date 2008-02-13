@@ -34,6 +34,9 @@ class Layout extends TTemplateControl
         if (isset($config["general"]["theme"]))
             $this->Page->Theme = $config["general"]["theme"];
 
+        if (isset($config["general"]["show docs"]) && $config["general"]["show docs"] != 1)
+            $this->documentations->Visible = false;
+
         if (!$this->Page->IsPostBack)
         {
             $r = isset($config["general"]["recents"]) ? $config["general"]["recents"] : 10;

@@ -32,8 +32,8 @@
         <h2><%[colaborative debugging tool]%></h2>
         <div id="lang">
             <%[Language:]%>
-            <a href="index.php?lang=pt_BR">Português</a> | 
-            <a href="index.php?lang=en_US">English</a>
+            <a href="<%= UrlGen::changeLangPath("pt_BR"); %>">Português</a> | 
+            <a href="<%= UrlGen::changeLangPath("en_US"); %>">English</a> |
         </div>
     </div>
     <div id="menu">
@@ -48,7 +48,8 @@
             </prop:ItemTemplate>
             <prop:FooterTemplate></ul></prop:FooterTemplate>
         </com:TRepeater>
-        
+       
+        <com:TPlaceHolder ID="documentations">
         <script>
             function buildQuery()
             {
@@ -72,6 +73,7 @@
             <input type="text" size="9" name="searched_value" />
             <input type="submit" value="Go!" />
         </form>
+        </com:TPlaceHolder>
 
 	<h2 class="menu_item" style="margin-top:15px;"><com:THyperLink NavigateUrl=<%=$this->Page->Request->constructUrl('page', 'Help')%>><%[help <span>center</span>]%></com:THyperLink></h2>
 	<a href="http://www.milk-it.net/" class="milk-it"><com:TImage ImageUrl=<%~ images/milk-it.jpg %> /></a>

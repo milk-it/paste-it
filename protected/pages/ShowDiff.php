@@ -37,10 +37,10 @@ class ShowDiff extends TPage
         $post2 = $post1->getParent();
 
         $diff = new Diff(explode("\n", $post2->code), explode("\n", $post1->code));
-        $diff = "<table cellpadding=\"0\" cellspacing=\"0\" class=\"diff\">" .
-	            "<tr><td></td><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td></td></tr>" .
-		    $diff->output . "</table>";
-        $this->diff->addParsedObject($diff);
+        if ($diff->hasChanges)
+            $this->diff->addParsedObject($diff->output);
+        else
+            $this->emptyDiff->Visible = true;
 
         $this->originalLink->NavigateUrl = UrlGen::postPath($post2);
         $this->originalLink->Text = "#{$post2->id}";

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <xliff version="1.0">
- <file source-language="EN" target-language="en_US" datatype="plaintext" original="messages" date="2007-10-30T04:47:48Z" product-name="messages">
+ <file source-language="EN" target-language="en_US" datatype="plaintext" original="messages" date="2008-02-13T01:03:32Z" product-name="messages">
   <body>
   
 <trans-unit id="1">
@@ -270,6 +270,26 @@
 
 <trans-unit id="54">
 <source>Remember me (and eliminate the captcha)</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="55">
+<source>(and eliminate the captcha)</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="56">
+<source>Differences between the post</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="57">
+<source>and</source>
+<target/>
+</trans-unit>
+
+<trans-unit id="58">
+<source>Sorry, there isn't any difference between these posts.</source>
 <target></target>
 </trans-unit>
 </body>

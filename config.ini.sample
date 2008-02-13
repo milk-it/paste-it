@@ -1,12 +1,16 @@
 [general]
 captcha=true
 blocks=true
-line_highlight=true
 recents=10
+; Uncomment the line below to remove the documentations block
+;show docs=false
 ; This line was comment to the css work in all environment
 ;theme="Default"
 ; Uncomment this line to change the default prado path ($APP/framework)
 ;pradoLocation="/home/chjunior/libs/php/prado/framework/"
+
+[defaults]
+lang=ruby
 
 [admin]
 email="carlos@milk-it.net"

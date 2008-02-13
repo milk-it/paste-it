@@ -20,4 +20,7 @@
 <com:TContent ID="content">
     <h1><%[Differences between the post]%> <com:THyperLink ID="originalLink" /> <%[and]%> <com:THyperLink ID="modifiedLink" />.</h1>
     <com:TPlaceHolder ID="diff" />
+    <com:TPlaceHolder ID="emptyDiff" Visible="false">
+        <div id="emptyDiff"><%[Sorry, there isn't any difference between these posts.]%></div>
+    </com:TPlaceHolder>
 </com:TContent>

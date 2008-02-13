@@ -42,6 +42,11 @@ class UrlGen
     {
         return self::postPath($post) . "/diff";
     }
+
+    public static function changeLangPath($newLang)
+    {
+        return self::$BASE . "?lang=$newLang";
+    }
 }
 
 ?>

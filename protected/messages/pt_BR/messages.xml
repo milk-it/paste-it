@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <xliff version="1.0">
- <file source-language="EN" target-language="pt_BR" datatype="plaintext" original="messages" date="2007-10-30T04:43:45Z" product-name="messages">
+ <file source-language="EN" target-language="pt_BR" datatype="plaintext" original="messages" date="2008-02-13T01:18:53Z" product-name="messages">
   <body>
   
 <trans-unit id="1">
@@ -251,6 +251,11 @@
 <trans-unit id="50">
 <source>Remember me (and eliminate the captcha)</source>
 <target>Lembre de mim (e elimine o captcha)</target>
+</trans-unit>
+
+<trans-unit id="51">
+<source>(and eliminate the captcha)</source>
+<target>(e elimine o captcha)</target>
 </trans-unit>
 </body>
  </file>

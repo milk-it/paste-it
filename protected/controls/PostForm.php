@@ -22,6 +22,8 @@ Prado::using("Application.models.Post");
  * will be replicated in several pages
  * PostForm class (the backend for PostForm control)
  * @author Carlos Henrique Júnior <carlos@milk-it.net>
+ *
+ * TODO: refactore this class (please!)
  */
 class PostForm extends TTemplateControl
 {
@@ -33,7 +35,7 @@ class PostForm extends TTemplateControl
         if (!$this->Page->IsPostBack)
         {
             $this->loadConfigurations();
-            $this->lineHighlightHelp->Visible = $config["general"]["line_highlight"] == 1;
+            $this->lineHighlightHelp->Visible = false;//$config["general"]["line_highlight"] == 1;
             $this->blocksHelp->Visible = $config["general"]["blocks"] == 1;
         }
         $this->saveButton->OnClick->add(array($this, "onSave"));
@@ -128,6 +130,7 @@ class PostForm extends TTemplateControl
         $this->captcha->Visible = false;
         $this->captchaText->Visible = false;
         $this->captchaValidator->Visible = false;
+        $this->lblEliminateCaptcha->Visible = false;
     }
 
     private function loadConfigurations()
@@ -149,7 +152,11 @@ class PostForm extends TTemplateControl
             $this->languageHighlight->setSelectedValue($this->Page->Request->Cookies["__highlight"]->getValue());
     
             $this->rememberMe->Checked = true;
-        } else if ($config["general"]["captcha"] != 1)
-            $this->disableCaptcha();
+        } else {
+            if ($config["general"]["captcha"] != 1)
+                $this->disableCaptcha();
+            if ($config["defaults"]["lang"])
+                $this->languageHighlight->setSelectedValue($config["defaults"]["lang"]);
+        }
     }
 } // end PostForm class

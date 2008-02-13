@@ -41,10 +41,10 @@
 class Diff
 {
     var $output='';
+    var $hasChanges = false;
      
     function Diff( $f1 , $f2 , $show_equal = 0 )
     {
-		error_reporting(E_ERROR | E_WARNING | E_PARSE);
         $c1         = 0 ;                   # current line of left
         $c2         = 0 ;                   # current line of right
         $max1       = count( $f1 ) ;        # maximal lines of left
@@ -52,8 +52,8 @@ class Diff
         $outcount   = 0;                    # output counter
         $hit1       = "" ;                  # hit in left
         $hit2       = "" ;                  # hit in right
-		$stop 		= 0;
-		$out		= "";
+	$stop 		= 0;
+	$out		= "";
 
         while (
                 ($c1 < $max1                 # have next line in left
@@ -234,7 +234,10 @@ class Diff
 
         }/*endwhile*/
 
-	$this->output=$out;
+        if ($this->hasChanges = strlen($out) > 0)
+            $this->output = "<table cellpadding=\"0\" cellspacing=\"0\" class=\"diff\">" .
+        	            "<tr><td colspan=\"2\"></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td style=\"width:100%\"></td></tr>" .
+    	        	    $out . "</table>";
     }/*end func*/
 
     /**
