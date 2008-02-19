@@ -170,7 +170,7 @@ div#highlight {float:left;display:inline}
 div#validity table {margin-top:6px;}
 div#validity label {padding-right:4px;}
 
-.postContent {width:100%; _width:99%; margin-bottom:15px; border:1px solid #c5c5c5;}
+.postContent {width:99%; margin-bottom:15px; border:1px solid #c5c5c5;}
 
 div#captchaBox {float:left;display:inline;width:33%}
 div#name_validity {float:right;min-width:50%;}
