@@ -79,7 +79,7 @@
     </div>
     <div id="name">
         <com:TLabel ForControl="posterName" Text="<%[Name:]%>" />
-        <com:TTextBox ID="posterName" Maxlength="50" />
+        <com:TTextBox ID="posterName" Maxlength="50" Style="width: 120px;" />
         <com:TRequiredFieldValidator
             ControlToValidate="posterName"
             ErrorMessage="<%[Don't you have a name?]%>"
